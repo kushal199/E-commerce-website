@@ -13,14 +13,14 @@
 <br>
 	
  <div class="container">
-               <div class="row">
-                <div class="col-sm-6 col-sm-offset-3">
-                    <table class="table table-striped">
+           <div class="row">
+             <div class="col-sm-6 col-sm-offset-3">
+                 <table class="table table-striped">
 
-                       <?php
-                        $sum = 0;
-                        $user_id = $_SESSION['id'];
-                        $query = "SELECT items.price AS Price, items.id, items.name AS Name FROM users_items JOIN items ON users_items.item_id = items.id WHERE users_items.user_id='$user_id' and status='Added to cart'";
+                    <?php
+                     $sum = 0;
+                      $user_id = $_SESSION['id'];
+                       $query = "SELECT items.price AS Price, items.id, items.name AS Name FROM users_items JOIN items ON users_items.item_id = items.id WHERE users_items.user_id='$user_id' and status='Added to cart'";
                         $result = mysqli_query($conn, $query)or die($mysqli_error($conn));
                         if (mysqli_num_rows($result) >= 1) {
                             ?>
@@ -67,6 +67,6 @@
              </div>
         </div>
      
-            <?php include 'includes/footer.php';?>
+            <?php include ('includes/footer.php');?>
         
        
